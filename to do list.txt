@@ -1,0 +1,42 @@
+to do list
+
+
+### Add Languages ###
+
+# Cyrillic
+- Belarussian
+- Tajik
+
+# Roman
+- Portuguese
+- Romanian
+
+# Germanic
+- Swedish
+- Norwegian
+
+# other
+- Finnish
+- Swahili
+- Tagalog
+
+# Chinese characters
+- Simplified Chinese
+- Traditional Chinese
+- Japanese
+
+# Arabic letters
+- Arabic
+- Farsi
+- Urdu
+
+# Indian
+- Hindi
+- Telugu
+- Marathi
+- Gujarati
+
+
+### CHANGE LABEL COLOR ON PREDICTION ###
+
+### UPLOAD LOCAL FILE FEATURE ###
