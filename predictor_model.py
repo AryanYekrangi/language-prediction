@@ -21,7 +21,14 @@ class LanguagePredictor:
         self.ukrainian_um = self.load_UM('_UM/ukrainian_UM.pkl')
         self.bulgarian_um = self.load_UM('_UM/bulgarian_UM.pkl')
         
-        self.ukrainian_um = self.load_UM('_UM/turkish_UM.pkl')
+        self.turkish_um = self.load_UM('_UM/turkish_UM.pkl')
+        self.finnish_um = self.load_UM('_UM/finnish_UM.pkl')
+        self.estonian_um = self.load_UM('_UM/estonian_UM.pkl')
+        self.tagalog_um = self.load_UM('_UM/tagalog_UM.pkl')
+        
+        #self.armenian_um = self.load_UM('_UM/armenian_UM.pkl')
+        self.armenian_um = self.load_UM('_UM/tamil_UM.pkl')
+        
         
 
     def load_UM(self, filename):

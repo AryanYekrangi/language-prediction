@@ -1,0 +1,172 @@
+<Label>
+	size_hint: (None, None)
+	size: (80, 40)
+	background_color: (0, 0, 0, 0)
+	canvas.before:
+		Color:
+			rgba: self.background_color
+		Rectangle:
+			size: self.size
+			pos: self.pos
+
+WindowManager:
+	FirstWindow:
+	SecondWindow:
+	
+<FirstWindow>:
+	name: "first"
+	BoxLayout:
+		orientation: "horizontal"
+		size: root.width, root.height
+		
+		BoxLayout:
+			orientation: "vertical"
+			size_hint: (0.8, 1)
+			
+			BoxLayout:
+				orientation: "horizontal"
+				size_hint: (1, 0.1)
+				Label:
+					font_size: 16
+					text: "Enter text below or upload a file."
+					size_hint: (1, 0.2)
+				
+				Button:
+					text: "Upload file"
+					background_color: (1, 1, 1, 1)
+					on_release: 
+						app.root.current = "second"
+						root.manager.transition.direction = "left"
+			
+			BoxLayout:
+				orientation: "vertical"
+				size_hint: (1, 0.9)
+				TextInput:
+					id: name_input
+					font_size: 20
+					multiline: True
+					size_hint: (1, 2)
+					background_color: (1,1,1,1)
+					font_name: "ArialUnicodeMS"
+					text: open(file='current_text.txt', mode='r', encoding='utf-8').read()
+				
+				Button:
+					font_size: 24
+					text: "Predict Language"
+					size_hint: (1, .4)
+					background_color: (1, 1, 1, 1)
+					on_press: root.press()
+		
+		
+		GridLayout:
+			size_hint: (0.1, 1)
+			cols: 1
+			rows: 11
+			
+			Label:
+				id: english_label
+				text: "English"
+				
+			
+			Label:
+				id: german_label
+				text: "German"
+			
+			Label:
+				id: dutch_label
+				text: "Dutch"
+				
+			Label:
+				id: danish_label
+				text: "Danish"
+						
+			Label:
+				id: french_label
+				text: "French"
+
+			Label:
+				id: spanish_label
+				text: "Spanish"
+						
+			Label:
+				id: italian_label
+				text: "Italian"
+						
+			Label:
+				id: turkish_label
+				text: "Turkish"
+						
+			Label:
+				id: finnish_label
+				text: "Finnish"
+				
+			Label:
+				id: estonian_label
+				text: "Estonian"
+			
+			Label:
+				id: tagalog_label
+				text: "Tagalog"
+						
+		GridLayout:
+			size_hint: (0.1, 1)
+			cols: 1
+			rows: 5
+			
+			Label:
+				id: russian_label
+				text: "Russian"
+						
+			Label:
+				id: ukrainian_label
+				text: "Ukrainian"
+						
+			Label:
+				id: bulgarian_label
+				text: "Bulgarian"
+			
+			Label:
+				id: armenian_label
+				text: "Armenian"
+				
+			Label:
+				id: tamil_label
+				text: "Tamil"
+
+
+<SecondWindow>:
+	name: "second"
+	text_input: text_input
+	
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+		
+		FileChooserIconView:
+			canvas.before:
+				Color:
+					rgb: .5, .4, .5
+				Rectangle:
+					pos: self.pos
+					size: self.size
+			on_selection: root.select(*args)
+
+		TextInput:
+			id: text_input
+			multiline: True
+		
+		BoxLayout:
+			orientation: "horizontal"
+			Button:
+				text: "Back"
+				background_color: (1, 1, 1, 1)
+				on_release: 
+					app.root.current = "first"
+					root.manager.transition.direction = "right"
+			Button:
+				text: "Choose File"
+				background_color: (1, 1, 1, 1)
+				on_press:
+					root.copy_texts()
+					app.root.current = "first"
+					root.manager.transition.direction = "right"
