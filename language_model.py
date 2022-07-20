@@ -100,9 +100,9 @@ class UnigramModel:
 
 
 def train_and_export(filename, language, percentage):
-    if language == 'ukrainian' or language == 'bulgarian':
+    if language in ['ukrainian', 'bulgarian', 'kazakh']:
         sep_language = 'russian'
-    elif language in ['armenian', 'tagalog', 'tamil']:
+    elif language in ['armenian', 'tagalog', 'tamil', 'farsi', 'urdu']: # ['farsi', 'urdu']
         sep_language = 'english'
     else:
         sep_language = language
@@ -131,4 +131,7 @@ if __name__ == '__main__':
 ##    train_and_export(filename='C:/Users/aryan/Desktop/language detection/_corpus/Tagalog_OpenSubtitles.txt', language='tagalog', percentage=1)
 ##    train_and_export(filename='C:/Users/aryan/Desktop/language detection/_corpus/Estonian_OpenSubtitles.txt', language='estonian', percentage=0.005)
 ##    train_and_export(filename='C:/Users/aryan/Desktop/language detection/_corpus/Tamil_OpenSubtitles.txt', language='tamil', percentage=1)
+##    train_and_export(filename='C:/Users/aryan/Desktop/language detection/_corpus/Kazakh_OpenSubtitles.txt', language='kazakh', percentage=1)
+##    train_and_export(filename='C:/Users/aryan/Desktop/language detection/_corpus/Farsi_OpenSubtitles.txt', language='farsi', percentage=0.005)
+##    train_and_export(filename='C:/Users/aryan/Desktop/language detection/_corpus/Urdu_OpenSubtitles.txt', language='urdu', percentage=0.1)
     DONE = True
